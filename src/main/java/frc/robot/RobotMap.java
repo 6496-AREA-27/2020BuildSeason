@@ -24,6 +24,9 @@ public class RobotMap {
     //Intake
   public static final int Intake_Motor_CanVictorSPX = 4;
 
+    //Flap
+  public static final int Flap_Motor_CanVictorSPX = 5;
+
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;

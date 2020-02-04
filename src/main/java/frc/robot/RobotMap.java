@@ -15,10 +15,14 @@ package frc.robot;
  */
 public class RobotMap {
   
+    //DriveTrain
   public static final int DRIVETRAIN_LEFT_FRONT_CanVICTORSPX = 0;
   public static final int DRIVETRAIN_LEFT_BACK_CanVICTORSPX = 1;
   public static final int DRIVETRAIN_RIGHT_FRONT_CanVICTORSPX = 2;
   public static final int DRIVETRAIN_RIGHT_BACK_CanVICTORSPX = 3;
+
+    //Intake
+  public static final int Intake_Motor_CanVictorSPX = 4;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

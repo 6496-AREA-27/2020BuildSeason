@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DigitalInput;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
@@ -19,7 +20,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
  */
 public class Flap extends Subsystem {
   WPI_VictorSPX flapMotor = null;
+  DigitalInput limitSwitchTop =  new DigitalInput(RobotMap.LIMIT_SWITCH_TOP);
+  DigitalInput limitSwitchBottom =  new DigitalInput(RobotMap.LIMIT_SWITCH_BOTTOM);
 
+  //Constructor for the flap object
 public Flap(){
   flapMotor = new WPI_VictorSPX(RobotMap.Flap_Motor_CanVictorSPX);
 }
@@ -29,6 +33,23 @@ public void Turn(double flapTurn){
   flapMotor.set(flapTurn);
 
   }
+  
+  //limit switchs
+  public boolean isTopSwitchSet() {
+    //int valueOfSwitch = counter.get();
+    boolean valueOfSwitch = limitSwitchTop.get();
+    System.out.println("value of the Top limit switch "+valueOfSwitch);
+    return valueOfSwitch;
+
+  }
+  //isbottomswichset
+  public boolean isBottomSwitchSet() {
+    //int valueOfSwitch = counter.get();
+    boolean valueOfSwitch = limitSwitchBottom.get();
+    System.out.println("value of the Bottom limit switch "+valueOfSwitch);
+    return valueOfSwitch;
+
+  }
 
   @Override
   public void initDefaultCommand() {
@@ -36,3 +57,5 @@ public void Turn(double flapTurn){
     // setDefaultCommand(new MySpecialCommand());
   }
 }
+
+

@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
+
 /**
  * Add your docs here.
  */
@@ -21,7 +22,7 @@ public class Intake extends Subsystem {
   WPI_VictorSPX IntakeMotor = null;
 
   public Intake () {
-    IntakeMotor = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_CanVICTORSPX);
+    IntakeMotor = new WPI_VictorSPX(RobotMap.Intake_Motor_CanVictorSPX);
     
   }
 
@@ -36,3 +37,4 @@ public class Intake extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 }
+ 

@@ -48,4 +48,9 @@ public class RobotMap {
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
+
+  //prelim maps for joystick
+  // public static final int JOYSTICK_MOVE_AXIS = 1;
+  // public static final int JOYSTICK_ROTATE_AXIS = 2;
+  
 }

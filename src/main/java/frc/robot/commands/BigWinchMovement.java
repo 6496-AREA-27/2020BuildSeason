@@ -7,12 +7,14 @@
 
 package frc.robot.commands;
 
-import frc.robot.*;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-public class FlapMovement extends Command {
-  public FlapMovement() {
-    requires(Robot.m_flap);
+public class BigWinchMovement extends Command {
+  public BigWinchMovement() {
+    requires(Robot.m_bigwinch);
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -23,7 +25,7 @@ public class FlapMovement extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_flap.Turn(1.0);
+    Robot.m_bigwinch.TurnBigWinch(1.0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -35,7 +37,8 @@ public class FlapMovement extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_flap.Turn(0);
+    Robot.m_bigwinch.TurnBigWinch(0);
+    
   }
 
   // Called when another command which requires one or more of the same

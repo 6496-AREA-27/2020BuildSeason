@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.IntakeOuttake;
+import frc.robot.commands.FlapMovement;
+import frc.robot.commands.BigWinchMovement;
 //import frc.robot.commands.*;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -43,7 +45,9 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
 public OI(){
-  D1.toggleWhenPressed(new IntakeOuttake());
+  D1.whileHeld(new IntakeOuttake());
+  D2.whileHeld(new FlapMovement());
+  D3.whileHeld(new BigWinchMovement());
 }
   // Run the command while the button is being held down and interrupt it once
   // the button is released.

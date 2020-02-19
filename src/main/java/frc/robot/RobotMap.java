@@ -25,8 +25,11 @@ public class RobotMap {
   public static final int Intake_Motor_CanVictorSPX = 4;
 
     //Flap
-  public static final int Flap_Motor_CanVictorSPX = 5;
+  public static final int Flap_Motor_CanVictorSPX = 6;
 
+// Winch
+public static final int Lil_Winch_CanVictorSPX = 7;
+public static final int Big_Winch_CanVictorSPX = 5;
     // Limit switch
   public static final int LIMIT_SWITCH_TOP = 1;
   public static final int LIMIT_SWITCH_BOTTOM = 0 ;

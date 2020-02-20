@@ -16,6 +16,7 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.BigWinch;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.LilWinch;
 import frc.robot.subsystems.Flap;
 import frc.robot.subsystems.ExampleSubsystem;
 
@@ -32,6 +33,7 @@ public class Robot extends TimedRobot {
   public static Intake m_intake = null;
   public static Flap m_flap = null;
   public static BigWinch m_bigwinch;
+  public static LilWinch m_lilwinch;
   public static OI m_oi;
   
   Command m_autonomousCommand;
@@ -47,6 +49,7 @@ public class Robot extends TimedRobot {
     m_intake = new Intake();
     m_flap = new Flap();
     m_bigwinch = new BigWinch();
+    m_lilwinch = new LilWinch();
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());

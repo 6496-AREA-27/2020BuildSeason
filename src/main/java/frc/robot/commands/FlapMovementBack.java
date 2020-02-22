@@ -10,9 +10,11 @@ package frc.robot.commands;
 import frc.robot.*;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class FlapMovement extends Command {
-  public FlapMovement() {
+public class FlapMovementBack extends Command {
+  public FlapMovementBack() {
     requires(Robot.m_flap);
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -23,17 +25,18 @@ public class FlapMovement extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_flap.Turn(1.0);
-    if (!(Robot.m_flap.isFlapTopSwitchSet())) {
+    Robot.m_flap.Turn(-1.0);
+
+    if (!(Robot.m_flap.isFlapBottomSwitchSet())) {
       // Robot.m_spinmotor.Spin(0);
-      Robot.m_flap.Turn(-1.0);
+      Robot.m_flap.Turn(1.0);
     }
     else {
       Robot.m_flap.Turn(0);
       return;
     }
-    Robot.m_flap.Turn(1.0); 
-    
+    Robot.m_flap.Turn(-1.0); 
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

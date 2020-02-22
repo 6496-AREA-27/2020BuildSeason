@@ -18,7 +18,7 @@ import frc.robot.*;
  * Add your docs here.
  */
 public class BigWinch extends Subsystem {
-  DigitalInput BiglimitSwitch =  new DigitalInput(RobotMap.LIMIT_SWITCH_BIG_WINCH_TOP);
+  //DigitalInput BiglimitSwitch =  new DigitalInput(RobotMap.LIMIT_SWITCH_BIG_WINCH_TOP);
   WPI_VictorSPX BigWinchMotor = null;
   
 

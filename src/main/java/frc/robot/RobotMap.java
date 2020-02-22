@@ -35,8 +35,9 @@ public static final int Big_Winch_CanVictorSPX = 5;
   public static final int LIMIT_SWITCH_TOP = 1;
   public static final int LIMIT_SWITCH_BOTTOM = 0 ;
 
-  // limit switchs for big winch 
-   public static final int LIMIT_SWITCH_BIG_WINCH_TOP = 2;
+  // limit switchs for Flap
+   public static final int LIMIT_SWITCH_FLAP_TOP = 2;
+   public static final int LIMIT_SWITCH_FLAP_BOTTOM = 3;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

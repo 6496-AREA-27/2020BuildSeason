@@ -11,7 +11,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.IntakeOuttake;
+import frc.robot.commands.OutTake;
 import frc.robot.commands.FlapMovement;
+import frc.robot.commands.FlapMovementBack;
 import frc.robot.commands.BigWinchMovement;
 //import frc.robot.commands.*;
 /**
@@ -51,7 +53,9 @@ public class OI {
 public OI(){
   D3.whileHeld(new BigWinchMovement());
   D1.whileHeld(new IntakeOuttake());
-  D2.whileHeld(new FlapMovement());
+  D2.whileHeld(new OutTake());
+  D5.whileHeld(new FlapMovement());
+  D6.whileHeld(new FlapMovementBack());
   
 }
   // Run the command while the button is being held down and interrupt it once

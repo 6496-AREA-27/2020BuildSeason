@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX; 
 
@@ -15,6 +16,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
  * Add your docs here.
  */
 public class Flap extends Subsystem {
+  DigitalInput limitSwitchFlapTop =  new DigitalInput(RobotMap.LIMIT_SWITCH_FLAP_TOP);
+  DigitalInput limitSwitchFlapBottom =  new DigitalInput(RobotMap.LIMIT_SWITCH_FLAP_BOTTOM);
 
   WPI_VictorSPX flapMotor = null;
 
@@ -22,6 +25,19 @@ public class Flap extends Subsystem {
     flapMotor = new WPI_VictorSPX(RobotMap.Flap_Motor_CanVictorSPX);
 
   }
+  public boolean isFlapTopSwitchSet() {
+    //int valueOfSwitch = counter.get();
+    boolean valueOfSwitch = limitSwitchFlapTop.get();
+    System.out.println("value of the Top limit switch for Flap "+valueOfSwitch);
+    return valueOfSwitch;
+}
+public boolean isFlapBottomSwitchSet() {
+    //int valueOfSwitch = counter.get();
+    boolean valueOfSwitch = limitSwitchFlapBottom.get();
+    System.out.println("value of the Bottom limit switch for Flap "+valueOfSwitch);
+    return valueOfSwitch;
+}
+
   // Put methods for controlling this subsystem
     // here. Call these from Commands.
   public void Turn(double flapTurn){

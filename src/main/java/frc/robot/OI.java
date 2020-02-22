@@ -19,7 +19,11 @@ import frc.robot.commands.BigWinchMovement;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+  public Joystick Operator = new Joystick(RobotMap.OI_OPERATOR);
+ // public Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
+ // public Joystick driverController2 = new Joystick(RobotMap.OI_DRIVER_CONTROLLER2);
   public Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
+  public Joystick driverController2 = new Joystick(RobotMap.OI_DRIVER_CONTROLLER2);
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -27,12 +31,12 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-  Button D1 = new JoystickButton(driverController, 1);
-  Button D2 = new JoystickButton(driverController, 2);
-  Button D3 = new JoystickButton(driverController, 3);
-  Button D4 = new JoystickButton(driverController, 4);
-  Button D5 = new JoystickButton(driverController, 5);
-  Button D6 = new JoystickButton(driverController, 6); 
+  Button D1 = new JoystickButton(Operator, 1);
+  Button D2 = new JoystickButton(Operator, 2);
+  Button D3 = new JoystickButton(Operator, 3);
+  Button D4 = new JoystickButton(Operator, 4);
+  Button D5 = new JoystickButton(Operator, 5);
+  Button D6 = new JoystickButton(Operator, 6); 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -45,9 +49,10 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
 public OI(){
+  D3.whileHeld(new BigWinchMovement());
   D1.whileHeld(new IntakeOuttake());
   D2.whileHeld(new FlapMovement());
-  D3.whileHeld(new BigWinchMovement());
+  
 }
   // Run the command while the button is being held down and interrupt it once
   // the button is released.

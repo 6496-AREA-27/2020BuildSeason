@@ -48,8 +48,8 @@ public class Robot extends TimedRobot {
     m_drivetrain = new DriveTrain();
     m_intake = new Intake();
     m_flap = new Flap();
-    m_bigwinch = new BigWinch();
     m_lilwinch = new LilWinch();
+    m_bigwinch = new BigWinch();
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());

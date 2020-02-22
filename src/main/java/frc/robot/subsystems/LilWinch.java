@@ -37,7 +37,7 @@ public class LilWinch extends Subsystem {
 public boolean isBottomSwitchSet() {
     //int valueOfSwitch = counter.get();
     boolean valueOfSwitch = limitSwitchBottom.get();
-    System.out.println("value of the Bottom limit switch "+valueOfSwitch);
+    System.out.println("value of the Bottom limit switch for LilWinch "+valueOfSwitch);
     return valueOfSwitch;
 }
 

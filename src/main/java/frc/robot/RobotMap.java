@@ -30,9 +30,13 @@ public class RobotMap {
 // Winch
 public static final int Lil_Winch_CanVictorSPX = 7;
 public static final int Big_Winch_CanVictorSPX = 5;
-    // Limit switch
+
+    // Limit switchs for lil winch
   public static final int LIMIT_SWITCH_TOP = 1;
   public static final int LIMIT_SWITCH_BOTTOM = 0 ;
+
+  // limit switchs for big winch 
+   public static final int LIMIT_SWITCH_BIG_WINCH_TOP = 2;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
@@ -41,7 +45,12 @@ public static final int Big_Winch_CanVictorSPX = 5;
 
 // set the joystick value to the port number the joystick uses on the 
   // laptop (this can be found in the Driverstation software):
+  public static final int OI_OPERATOR = 2;
   public static final int OI_DRIVER_CONTROLLER = 0;
+  public static final int OI_DRIVER_CONTROLLER2 = 1;
+ 
+
+  
   public static final int DRIVER_CONTROLLER_MOVE_AXIS = 1;
   public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 4;
   public static final int DRIVER_CONTROLLER_CLOCKWISE = 2;
@@ -53,7 +62,7 @@ public static final int Big_Winch_CanVictorSPX = 5;
   // public static int rangefinderModule = 1;
 
   //prelim maps for joystick
-  // public static final int JOYSTICK_MOVE_AXIS = 1;
-  // public static final int JOYSTICK_ROTATE_AXIS = 2;
+  //public static final int JOYSTICK_MOVE_AXIS = 1;
+  //public static final int JOYSTICK_ROTATE_AXIS = 2;
   
 }

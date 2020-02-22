@@ -28,11 +28,11 @@ public class DriveArcade extends Command {
   @Override
   protected void execute() {
     double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS)*-1;
-    double rotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_AXIS);
+    double rotateSpeed = Robot.m_oi.driverController2.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
     // double joystickMoveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.JOYSTICK_MOVE_AXIS)*-1;
     // double joystickRotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.JOYSTICK_ROTATE_AXIS);
     Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
-    // Robot.m_drivetrain.arcadeDrive(joystickMoveSpeed, joystickRotateSpeed);
+    //Robot.m_drivetrain.arcadeDrive(joystickMoveSpeed, joystickRotateSpeed);
 
   }
 

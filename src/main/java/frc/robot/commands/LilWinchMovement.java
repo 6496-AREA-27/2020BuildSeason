@@ -28,8 +28,8 @@ public class LilWinchMovement extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
-    double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
+    double rightTriggerSpeed = Robot.m_oi.Operator.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
+    double leftTriggerSpeed = Robot.m_oi.Operator.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
     rightTriggerSpeed = rightTriggerSpeed*0.5;
     leftTriggerSpeed = leftTriggerSpeed*0.5; //for kaiz :)
 

@@ -16,7 +16,7 @@ public class BigWinchMovement extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
-
+  
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
@@ -25,7 +25,11 @@ public class BigWinchMovement extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_bigwinch.TurnBigWinch(1.0);
+    Robot.m_bigwinch.TurnBigWinch(-1.0);
+  
+    //if (!(Robot.m_bigwinch.isBigLimitSwitchSet())) {
+      //Robot.m_bigwinch.TurnBigWinch(0);
+    //}
   }
 
   // Make this return true when this Command no longer needs to run execute()

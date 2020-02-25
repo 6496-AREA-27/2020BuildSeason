@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.command.Command;
 //import frc.robot.OI;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-public class DriveArcade extends Command {
-  public DriveArcade() {
+public class SlowDriveArcade extends Command {
+  public SlowDriveArcade() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.m_drivetrain);
@@ -27,8 +27,8 @@ public class DriveArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
-    double rotateSpeed = Robot.m_oi.driverController2.getRawAxis(RobotMap.DRIVER_CONTROLLER_TURN);
+    double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS) * 0.40;
+    double rotateSpeed = Robot.m_oi.driverController2.getRawAxis(RobotMap.DRIVER_CONTROLLER_TURN) * 0.40;
     // double joystickMoveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.JOYSTICK_MOVE_AXIS)*-1;
     // double joystickRotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.JOYSTICK_ROTATE_AXIS);
     Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);

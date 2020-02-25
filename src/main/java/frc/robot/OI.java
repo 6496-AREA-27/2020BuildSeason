@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.IntakeOuttake;
 import frc.robot.commands.OutTake;
+import frc.robot.commands.SlowDriveArcade;
 import frc.robot.commands.FlapMovement;
 import frc.robot.commands.FlapMovementBack;
 import frc.robot.commands.BigWinchMovement;
@@ -38,7 +39,9 @@ public class OI {
   Button D3 = new JoystickButton(Operator, 3);
   Button D4 = new JoystickButton(Operator, 4);
   Button D5 = new JoystickButton(Operator, 5);
+  Button DSix = new JoystickButton(driverController2, 6);
   Button D6 = new JoystickButton(Operator, 6); 
+  Button D12 = new JoystickButton(driverController2, 12); 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -56,6 +59,7 @@ public OI(){
   D2.whileHeld(new OutTake());
   D5.whileHeld(new FlapMovement());
   D6.whileHeld(new FlapMovementBack());
+  DSix.whileHeld(new SlowDriveArcade());
   
 }
   // Run the command while the button is being held down and interrupt it once

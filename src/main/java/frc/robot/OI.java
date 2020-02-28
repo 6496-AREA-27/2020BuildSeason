@@ -16,6 +16,7 @@ import frc.robot.commands.SlowDriveArcade;
 import frc.robot.commands.FlapMovement;
 import frc.robot.commands.FlapMovementBack;
 import frc.robot.commands.BigWinchMovement;
+import frc.robot.commands.DriveArcade;
 //import frc.robot.commands.*;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -39,7 +40,7 @@ public class OI {
   Button D3 = new JoystickButton(Operator, 3);
   Button D4 = new JoystickButton(Operator, 4);
   Button D5 = new JoystickButton(Operator, 5);
-  Button DSix = new JoystickButton(driverController2, 6);
+  public Button DSix = new JoystickButton(driverController2, 6);
   Button D6 = new JoystickButton(Operator, 6); 
   Button D12 = new JoystickButton(driverController2, 12); 
   // There are a few additional built in buttons you can use. Additionally,
@@ -54,6 +55,7 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new ExampleCommand());
 public OI(){
+  //boolean moveSpeed = 0;
   D3.whileHeld(new BigWinchMovement());
   D1.whileHeld(new IntakeOuttake());
   D2.whileHeld(new OutTake());
@@ -62,6 +64,7 @@ public OI(){
   DSix.whileHeld(new SlowDriveArcade());
   
 }
+
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
   // button.whileHeld(new ExampleCommand());

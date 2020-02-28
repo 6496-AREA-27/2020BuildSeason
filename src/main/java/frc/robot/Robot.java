@@ -65,7 +65,7 @@ public class Robot extends TimedRobot {
     m_lilwinch = new LilWinch();
     m_bigwinch = new BigWinch();
     m_oi = new OI();
-    m_autonomousCommand = new Auto(-1,3000);
+    m_autonomousCommand = new Auto(-0.5,2000);
     // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // // chooser.addOption("My Auto", new MyAutoCommand());
     // SmartDashboard.putData("Auto mode", m_chooser);

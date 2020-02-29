@@ -24,16 +24,6 @@ public class FlapMovement extends Command {
   @Override
   protected void execute() {
     Robot.m_flap.Turn(1.0);
-    if (!(Robot.m_flap.isFlapTopSwitchSet())) {
-      // Robot.m_spinmotor.Spin(0);
-      Robot.m_flap.Turn(-1.0);
-    }
-    else {
-      Robot.m_flap.Turn(0);
-      return;
-    }
-    Robot.m_flap.Turn(1.0); 
-    
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -57,7 +57,11 @@ public class LilWinchMovement extends Command {
       Robot.m_lilwinch.Spin(0);
       return;
     }
-    Robot.m_lilwinch.Spin(leftTriggerSpeed - rightTriggerSpeed); 
+    /*if (!(Robot.m_lilwinch.isTopSwitchSet())){
+  
+      Robot.m_lilwinch.Spin(0.1);
+    }
+    */Robot.m_lilwinch.Spin(leftTriggerSpeed - rightTriggerSpeed); 
 
   }
 

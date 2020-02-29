@@ -29,6 +29,7 @@ public class Auto extends Command {
   // Called repeatedly when this Command is scheduled to run
   protected void execute() {
       Robot.m_drivetrain.arcadeDrive(power, 0);
+      //Robot.m_intake.Speed(1);
   }
 
   // Make this return true when this Command no longer needs to run execute()

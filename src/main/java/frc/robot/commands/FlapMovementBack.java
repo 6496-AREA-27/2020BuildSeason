@@ -11,12 +11,21 @@ import frc.robot.*;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class FlapMovementBack extends Command {
+  private double power;
+
   public FlapMovementBack() {
-    requires(Robot.m_flap);
+    this(-1.0, 0.0);
+  }
+  
+  public FlapMovementBack(double power, double timeoutInSecs) {
+    this.power = power;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(Robot.m_flap);
+    if (timeoutInSecs > 0) {
+      setTimeout(timeoutInSecs);
+    }
   }
-
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
@@ -25,24 +34,23 @@ public class FlapMovementBack extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_flap.Turn(-1.0);
-
-    if (!(Robot.m_flap.isFlapBottomSwitchSet())) {
-      // Robot.m_spinmotor.Spin(0);
-      Robot.m_flap.Turn(1.0);
-    }
-    else {
-      Robot.m_flap.Turn(0);
-      return;
-    }
-    Robot.m_flap.Turn(-1.0); 
+    Robot.m_flap.Turn(power);
+    
+    // if ((Robot.m_flap.isFlapBottomSwitchSet()) && (power < 0)) {
+    
+    //   Robot.m_flap.Turn(0.0);
+    // } else if ((Robot.m_flap.isFlapTopSwitchSet()) && (power > 0)) {
+    //   Robot.m_flap.Turn(0.0);
+    // } else {
+    //   Robot.m_flap.Turn(power);
+    // }
 
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return Robot.m_flap.isFlapBottomSwitchSet();
   }
 
   // Called once after isFinished returns true

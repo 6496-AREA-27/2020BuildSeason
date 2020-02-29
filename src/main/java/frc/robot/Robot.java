@@ -11,11 +11,15 @@ import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Auto;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.FlapMovementBack;
+import frc.robot.commands.IntakeOuttake;
 import frc.robot.subsystems.BigWinch;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Intake;
@@ -65,10 +69,29 @@ public class Robot extends TimedRobot {
     m_lilwinch = new LilWinch();
     m_bigwinch = new BigWinch();
     m_oi = new OI();
-    m_autonomousCommand = new Auto(-0.5,2000);
+    m_autonomousCommand =  createAuton();
     // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // // chooser.addOption("My Auto", new MyAutoCommand());
     // SmartDashboard.putData("Auto mode", m_chooser);
+  }
+
+  private Command createAuton() {
+    Command drive = new Auto(0.5, 2000);
+    Command Flapback =  new FlapMovementBack(-1, 2.0);
+    Command AutoShoot = new IntakeOuttake(1, 5.0);
+    
+    CommandGroup auton = new CommandGroup();
+    //auton.addSequential(new WaitCommand(2.0));
+    auton.addSequential(drive);
+    auton.addSequential(new WaitCommand(2.0));
+
+    auton.addSequential(Flapback);
+    //auton.addSequential(new WaitCommand(2.0));
+
+    auton.addSequential(AutoShoot, 5.0);
+    
+    return auton;
+
   }
 
   /**

@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
 import frc.robot.commands.LilWinchMovement;
 
@@ -27,6 +28,7 @@ public class LilWinch extends Subsystem {
 
   public LilWinch(){
     LilWinchMotor = new WPI_VictorSPX(RobotMap.Lil_Winch_CanVictorSPX);
+   // SmartDashboard.putData("lilWinch", this);
   }
   public boolean isTopSwitchSet() {
     //int valueOfSwitch = counter.get();

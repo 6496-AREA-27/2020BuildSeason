@@ -76,20 +76,19 @@ public class Robot extends TimedRobot {
   }
 
   private Command createAuton() {
-    Command drive = new Auto(0.5, 2000);
+    Command drive = new Auto(0.5, 4000);
     Command Flapback =  new FlapMovementBack(-1, 2.0);
     Command AutoShoot = new IntakeOuttake(1, 5.0);
+    //Command driveback = new Auto(-0.6, 4000);
     
     CommandGroup auton = new CommandGroup();
     //auton.addSequential(new WaitCommand(2.0));
     auton.addSequential(drive);
     auton.addSequential(new WaitCommand(2.0));
-
     auton.addSequential(Flapback);
     //auton.addSequential(new WaitCommand(2.0));
-
     auton.addSequential(AutoShoot, 5.0);
-    
+    //auton.addSequential(driveback);
     return auton;
 
   }

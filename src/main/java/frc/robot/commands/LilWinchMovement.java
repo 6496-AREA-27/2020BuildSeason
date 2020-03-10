@@ -40,6 +40,7 @@ public class LilWinchMovement extends Command {
 /*if (leftTriggerSpeed >0 && -rightTriggerSpeed > 0) {
   Robot.m_spinmotor.Spin(0);
 }*/
+    
     if (!(Robot.m_lilwinch.isTopSwitchSet()) && !(Robot.m_lilwinch.isBottomSwitchSet())) {
       // Robot.m_spinmotor.Spin(0);
       Robot.m_lilwinch.Spin(leftTriggerSpeed - rightTriggerSpeed);

@@ -30,14 +30,14 @@ public class DriveArcade extends Command {
   protected void execute() {
     double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = Robot.m_oi.driverController2.getRawAxis(RobotMap.DRIVER_CONTROLLER_TURN);
-    double toggal = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
+    //double toggal = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
 
-    if(toggal == 1.0 ){
-      Robot.m_drivetrain.arcadeDrive(moveSpeed * -1, rotateSpeed * -1);
-    }
-    else{
-      Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
-    }
+    //if(toggal == 1.0 ){
+      //Robot.m_drivetrain.arcadeDrive(moveSpeed * -1, rotateSpeed * -1);
+    //}
+    //else{
+      //Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+    //}
 
     //while (Robot.m_oi.) {
       //moveSpeed *= 0.4;

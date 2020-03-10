@@ -43,6 +43,8 @@ public class OI {
   public Button DSix = new JoystickButton(driverController2, 6);
   Button D6 = new JoystickButton(Operator, 6); 
   Button D12 = new JoystickButton(driverController2, 12); 
+  double toggal = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
+
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -56,13 +58,15 @@ public class OI {
   // button.whenPressed(new ExampleCommand());
 public OI(){
   //boolean moveSpeed = 0;
-  D3.whileHeld(new BigWinchMovement());
+  if(toggal >= 0.7){
+    D3.whileHeld(new BigWinchMovement());
+   }
   D1.whileHeld(new IntakeOuttake());
   D2.whileHeld(new OutTake());
   D5.whileHeld(new FlapMovement());
   D6.whileHeld(new FlapMovementBack());
   DSix.whileHeld(new SlowDriveArcade());
-  
+
 }
 
   // Run the command while the button is being held down and interrupt it once
